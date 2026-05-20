@@ -16,7 +16,8 @@ repositories {
 }
 
 dependencies {
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testImplementation libs.junit.jupiter
+    testRuntimeOnly libs.junit.platform.launcher
 
     // This dependency is used by the application.
     implementation libs.guava
