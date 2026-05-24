@@ -3,7 +3,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import pariwisata.database.Db;
 import pariwisata.model.Review;
@@ -15,8 +14,7 @@ public class ReviewRepository implements RepositoryMethod<Review, String> {
         try (
             PreparedStatement pstmt = Db.connection.prepareStatement(query);
         ) {
-            String id = UUID.randomUUID().toString();
-            pstmt.setString(1, id);
+            pstmt.setString(1, review.getId());
             pstmt.setString(2, review.getUserId());
             pstmt.setString(3, review.getDestinationId());
             pstmt.setInt(4, review.getRating());

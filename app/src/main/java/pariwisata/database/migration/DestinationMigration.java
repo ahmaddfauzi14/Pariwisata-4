@@ -12,6 +12,7 @@ public class DestinationMigration extends Migration {
                 CREATE TABLE IF NOT EXISTS destinations (
                     id TEXT PRIMARY KEY,
                     name TEXT NOT NULL,
+                    description TEXT NOT NULL,
                     category TEXT NOT NULL,
                     address TEXT NOT NULL UNIQUE,
                     photo_url TEXT,

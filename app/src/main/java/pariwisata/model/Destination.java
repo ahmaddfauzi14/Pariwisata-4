@@ -1,10 +1,13 @@
 package pariwisata.model;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Destination {
     private String id;
     private String name;
+    private String description;
     private String category;
     private String address;
     private String price;
@@ -15,10 +18,14 @@ public class Destination {
     private String photoUrl;
     private Timestamp createdAt;
 
-    public Destination(String id, String name, String category, String address, String price, String mapUrl,
+    private List<Medsos> medsosList = new ArrayList<>();
+    private List<Review> reviews = new ArrayList<>();
+
+    public Destination(String id, String name, String category, String description, String address, String price, String mapUrl,
             String operationalStatus, String openHour, String closeHour, String photoUrl) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.category = category;
         this.address = address;
         this.price = price;
@@ -59,6 +66,14 @@ public class Destination {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getDescription() {
+        return this.description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getPrice() {
@@ -112,4 +127,21 @@ public class Destination {
         public Timestamp getCreatedAt() {
             return this.createdAt;
         }
+
+    public List<Medsos> getMedsosList() {
+        return this.medsosList;
+    }
+
+    public void setMedsosList(List<Medsos> medsosList) {
+        this.medsosList = medsosList;
+    }
+
+    public List<Review> getReviews() {
+        return this.reviews;
+    }
+
+    public void setReviews(List<Review> reviews) {
+        this.reviews = reviews;
+    }
+
     }

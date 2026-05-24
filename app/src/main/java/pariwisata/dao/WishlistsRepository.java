@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import pariwisata.database.Db;
 import pariwisata.model.Wishlist;
@@ -16,8 +15,7 @@ public class WishlistsRepository implements RepositoryMethod<Wishlist, String> {
         try (
             PreparedStatement pstmt = Db.connection.prepareStatement(query);
         ) {
-            String id = UUID.randomUUID().toString();
-            pstmt.setString(1, id);
+            pstmt.setString(1, wishlist.getId());
             pstmt.setString(2, wishlist.getUserId());
             pstmt.setString(3, wishlist.getDestinationId());
             return pstmt.executeUpdate() > 0;
