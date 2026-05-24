@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import pariwisata.database.Db;
 import pariwisata.model.Medsos;
@@ -16,8 +15,7 @@ public class MedsosRepository implements RepositoryMethod<Medsos, String> {
         try (
             PreparedStatement pstmt = Db.connection.prepareStatement(query);
         ) {
-            String id = UUID.randomUUID().toString();
-            pstmt.setString(1, id);
+            pstmt.setString(1, medsos.getId());
             pstmt.setString(2, medsos.getDestinationId());
             pstmt.setString(3, medsos.getPlatformName());
             pstmt.setString(4, medsos.getUrl());

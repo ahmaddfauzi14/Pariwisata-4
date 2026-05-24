@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import pariwisata.database.Db;
 import pariwisata.model.Destination;
@@ -12,22 +11,22 @@ import pariwisata.model.Destination;
 public class DestinationRepository implements RepositoryMethod<Destination, String> {
     @Override
     public boolean create(Destination destination) {
-        String query = "INSERT INTO destinations (id, name, category, address, price, map_url, operational_status, open_hour, close_hour, photo_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO destinations (id, name, category, description, address, price, map_url, operational_status, open_hour, close_hour, photo_url) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     
         try (
             PreparedStatement pstmt = Db.connection.prepareStatement(query);
         ) {
-            String id = UUID.randomUUID().toString();
-            pstmt.setString(1, id);
+            pstmt.setString(1, destination.getId());
             pstmt.setString(2, destination.getName());
             pstmt.setString(3, destination.getCategory());
-            pstmt.setString(4, destination.getAddress());
-            pstmt.setString(5, destination.getPrice());
-            pstmt.setString(6, destination.getMapUrl());
-            pstmt.setString(7, destination.getOperationalStatus());
-            pstmt.setString(8, destination.getOpenHour());
-            pstmt.setString(9, destination.getCloseHour());
-            pstmt.setString(10, destination.getPhotoUrl());
+            pstmt.setString(4, destination.getDescription());
+            pstmt.setString(5, destination.getAddress());
+            pstmt.setString(6, destination.getPrice());
+            pstmt.setString(7, destination.getMapUrl());
+            pstmt.setString(8, destination.getOperationalStatus());
+            pstmt.setString(9, destination.getOpenHour());
+            pstmt.setString(10, destination.getCloseHour());
+            pstmt.setString(11, destination.getPhotoUrl());
             return pstmt.executeUpdate() > 0;
 
         } catch (SQLException e) {
@@ -39,6 +38,7 @@ public class DestinationRepository implements RepositoryMethod<Destination, Stri
 
     @Override
     public Destination getById(String id) {
+
         String query = """
                 SELECT * FROM destinations WHERE id = ?
                 """;
@@ -53,6 +53,7 @@ public class DestinationRepository implements RepositoryMethod<Destination, Stri
                     rs.getString("id"),
                     rs.getString("name"),
                     rs.getString("category"),
+                    rs.getString("description"),
                     rs.getString("address"),
                     rs.getString("price"),
                     rs.getString("map_url"),
@@ -61,6 +62,10 @@ public class DestinationRepository implements RepositoryMethod<Destination, Stri
                     rs.getString("close_hour"),
                     rs.getString("photo_url")
                 );
+                
+                destination.setReviews(new ReviewRepository().getByDestinationId(destination.getId()));
+                destination.setMedsosList(new MedsosRepository().getByDestinationId(destination.getId()));
+
                 return destination;
             }
         } catch (SQLException e) {
@@ -85,6 +90,7 @@ public class DestinationRepository implements RepositoryMethod<Destination, Stri
                     rs.getString("id"),
                     rs.getString("name"),
                     rs.getString("category"),
+                    rs.getString("description"),
                     rs.getString("address"),
                     rs.getString("price"),
                     rs.getString("map_url"),
@@ -106,7 +112,7 @@ public class DestinationRepository implements RepositoryMethod<Destination, Stri
     @Override
     public boolean update(Destination destination) {
         String query = """
-                UPDATE destinations SET name = ?, category = ?, address = ?, price = ?, map_url = ?, operational_status = ?, open_hour = ?, close_hour = ?, photo_url = ? WHERE id = ?
+                UPDATE destinations SET name = ?, category = ?, description = ?, address = ?, price = ?, map_url = ?, operational_status = ?, open_hour = ?, close_hour = ?, photo_url = ? WHERE id = ?
                 """;
 
         try (
@@ -114,14 +120,15 @@ public class DestinationRepository implements RepositoryMethod<Destination, Stri
         ) {
             pstmt.setString(1, destination.getName());
             pstmt.setString(2, destination.getCategory());
-            pstmt.setString(3, destination.getAddress());
-            pstmt.setString(4, destination.getPrice());
-            pstmt.setString(5, destination.getMapUrl());
-            pstmt.setString(6, destination.getOperationalStatus());
-            pstmt.setString(7, destination.getOpenHour());
-            pstmt.setString(8, destination.getCloseHour());
-            pstmt.setString(9, destination.getPhotoUrl());
-            pstmt.setString(10, destination.getId());
+            pstmt.setString(3, destination.getDescription());
+            pstmt.setString(4, destination.getAddress());
+            pstmt.setString(5, destination.getPrice());
+            pstmt.setString(6, destination.getMapUrl());
+            pstmt.setString(7, destination.getOperationalStatus());
+            pstmt.setString(8, destination.getOpenHour());
+            pstmt.setString(9, destination.getCloseHour());
+            pstmt.setString(10, destination.getPhotoUrl());
+            pstmt.setString(11, destination.getId());
             return pstmt.executeUpdate() > 0;
         } catch (Exception e) {
             e.printStackTrace();

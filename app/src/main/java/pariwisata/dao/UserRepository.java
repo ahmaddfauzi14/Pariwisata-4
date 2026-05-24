@@ -25,8 +25,7 @@ public class UserRepository implements RepositoryMethod<User, String> {
         try (
             PreparedStatement pstmt = Db.connection.prepareStatement(query);
         ) {
-            String id = UUID.randomUUID().toString();
-            pstmt.setString(1, id);
+            pstmt.setString(1, user.getId());
             pstmt.setString(2, user.getUsername());
             pstmt.setString(3, user.getEmail());
             pstmt.setString(4, hashPassword);
@@ -50,6 +49,35 @@ public class UserRepository implements RepositoryMethod<User, String> {
             PreparedStatement pstmt = Db.connection.prepareStatement(query);
         ) {
             pstmt.setString(1, id);
+            var rs = pstmt.executeQuery();
+            if (rs.next()) {
+                User user = new User(
+                    rs.getString("id"),
+                    rs.getString("username"),
+                    rs.getString("email"),
+                    rs.getString("password")
+                );
+
+                user.setReviews(new ReviewRepository().getByUserId(user.getId()));
+                user.setWishlists(new WishlistsRepository().getByUserId(user.getId()));
+
+                return user;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public User getByEmail(String email) {
+        String query = """
+                SELECT * FROM users WHERE email = ?
+                """;
+
+        try (
+            PreparedStatement pstmt = Db.connection.prepareStatement(query);
+        ) {
+            pstmt.setString(1, email);
             var rs = pstmt.executeQuery();
             if (rs.next()) {
                 User user = new User(
