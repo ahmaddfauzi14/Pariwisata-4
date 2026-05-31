@@ -4,7 +4,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -57,6 +56,7 @@ public class UserRepository implements RepositoryMethod<User, String> {
                     rs.getString("email"),
                     rs.getString("password")
                 );
+                user.setRole(rs.getString("role"));
 
                 user.setReviews(new ReviewRepository().getByUserId(user.getId()));
                 user.setWishlists(new WishlistsRepository().getByUserId(user.getId()));
@@ -86,6 +86,7 @@ public class UserRepository implements RepositoryMethod<User, String> {
                     rs.getString("email"),
                     rs.getString("password")
                 );
+                user.setRole(rs.getString("role"));
 
                 user.setReviews(new ReviewRepository().getByUserId(user.getId()));
                 user.setWishlists(new WishlistsRepository().getByUserId(user.getId()));
@@ -116,6 +117,7 @@ public class UserRepository implements RepositoryMethod<User, String> {
                     rs.getString("email"),
                     rs.getString("password")
                 );
+                user.setRole(rs.getString("role"));
                 users.add(user);
             }
             return users;

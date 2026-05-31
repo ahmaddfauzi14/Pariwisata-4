@@ -1,0 +1,80 @@
+/* =========================================================
+   AUTH PAGE
+   ========================================================= */
+
+.auth-background {
+
+    -fx-background-color:
+        linear-gradient(
+            rgba(0,59,122,0.55),
+            rgba(0,59,122,0.55)
+        );
+}
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.auth-card {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 30;
+
+    -fx-padding: 40;
+
+    -fx-spacing: 20;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0,0,0,0.15),
+        20,
+        0,
+        0,
+        6
+    );
+}
+
+/* =========================================================
+   AUTH TITLE
+   ========================================================= */
+
+.auth-title {
+
+    -fx-font-size: 30px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   AUTH SUBTITLE
+   ========================================================= */
+
+.auth-subtitle {
+
+    -fx-font-size: 14px;
+
+    -fx-text-fill: #6B7A99;
+}
+
+/* =========================================================
+   HERO TEXT (overlay on left panel) - MUST be white
+   ========================================================= */
+
+.hero-title {
+
+    -fx-font-size: 36px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: white;
+}
+
+.hero-subtitle {
+
+    -fx-font-size: 16px;
+
+    -fx-text-fill: white;
+}
