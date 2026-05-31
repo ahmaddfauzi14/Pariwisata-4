@@ -1,0 +1,345 @@
+/* =========================================================
+   DETAIL CONTAINER
+   ========================================================= */
+
+.detail-container {
+
+    -fx-background-color: #F7FAFC;
+
+    -fx-padding: 30;
+
+    -fx-spacing: 25;
+}
+
+/* =========================================================
+   DETAIL IMAGE CONTAINER
+   ========================================================= */
+
+.detail-image-container {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 30;
+
+    -fx-effect:
+        dropshadow(
+            gaussian,
+            rgba(0,0,0,0.12),
+            24,
+            0.2,
+            0,
+            8
+        );
+}
+
+/* =========================================================
+   DETAIL IMAGE
+   ========================================================= */
+
+.detail-image {
+
+    -fx-background-radius: 30;
+}
+
+/* =========================================================
+   DETAIL TITLE
+   ========================================================= */
+
+.detail-title {
+
+    -fx-font-size: 32px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   DETAIL SUBTITLE
+   ========================================================= */
+
+.detail-subtitle {
+
+    -fx-font-size: 15px;
+
+    -fx-text-fill: #64748B;
+}
+
+/* =========================================================
+   DETAIL CATEGORY
+   ========================================================= */
+
+.detail-category {
+
+    -fx-background-color: #EAF4FF;
+
+    -fx-text-fill: #0D6EFD;
+
+    -fx-font-size: 13px;
+
+    -fx-font-weight: bold;
+
+    -fx-padding: 8 16 8 16;
+
+    -fx-background-radius: 20;
+}
+
+/* =========================================================
+   DETAIL PRICE
+   ========================================================= */
+
+.detail-price {
+
+    -fx-font-size: 20px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #0D6EFD;
+}
+
+/* =========================================================
+   DETAIL STATUS
+   ========================================================= */
+
+.detail-status {
+
+    -fx-background-color: #DCFCE7;
+
+    -fx-text-fill: #16A34A;
+
+    -fx-font-size: 13px;
+
+    -fx-font-weight: bold;
+
+    -fx-padding: 8 16 8 16;
+
+    -fx-background-radius: 20;
+}
+
+/* =========================================================
+   DETAIL DESCRIPTION TITLE
+   ========================================================= */
+
+.detail-section-title {
+
+    -fx-font-size: 22px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   DETAIL DESCRIPTION
+   ========================================================= */
+
+.detail-description {
+
+    -fx-font-size: 15px;
+
+    -fx-text-fill: #334155;
+
+    -fx-line-spacing: 7;
+}
+
+/* =========================================================
+   DETAIL INFO CARD
+   ========================================================= */
+
+.detail-info-card {
+
+    -fx-background-color: white;
+
+    -fx-padding: 24;
+
+    -fx-spacing: 18;
+
+    -fx-background-radius: 24;
+
+    -fx-effect:
+        dropshadow(
+            gaussian,
+            rgba(0,0,0,0.08),
+            18,
+            0.15,
+            0,
+            4
+        );
+}
+
+/* =========================================================
+   DETAIL BUTTON CONTAINER
+   ========================================================= */
+
+.detail-button-container {
+
+    -fx-spacing: 15;
+}
+
+/* =========================================================
+   DETAIL PRIMARY BUTTON
+   ========================================================= */
+
+.detail-primary-button {
+
+    -fx-background-color: #0D6EFD;
+
+    -fx-text-fill: white;
+
+    -fx-font-size: 14px;
+
+    -fx-font-weight: bold;
+
+    -fx-padding: 12 24 12 24;
+
+    -fx-background-radius: 14;
+
+    -fx-cursor: hand;
+}
+
+.detail-primary-button:hover {
+
+    -fx-background-color: #0056D2;
+}
+
+/* =========================================================
+   DETAIL SECONDARY BUTTON
+   ========================================================= */
+
+.detail-secondary-button {
+
+    -fx-background-color: white;
+
+    -fx-border-color: #D0D7E2;
+
+    -fx-border-width: 1.5;
+
+    -fx-text-fill: #1B1F3B;
+
+    -fx-font-size: 14px;
+
+    -fx-font-weight: bold;
+
+    -fx-padding: 12 24 12 24;
+
+    -fx-background-radius: 14;
+
+    -fx-border-radius: 14;
+
+    -fx-cursor: hand;
+}
+
+.detail-secondary-button:hover {
+
+    -fx-background-color: #F1F5F9;
+}
+
+/* =========================================================
+   SOCIAL BUTTON
+   ========================================================= */
+
+.detail-social-button {
+
+    -fx-background-color: #F8FAFC;
+
+    -fx-border-color: #CBD5E1;
+
+    -fx-border-width: 1;
+
+    -fx-text-fill: #1B1F3B;
+
+    -fx-font-size: 13px;
+
+    -fx-font-weight: bold;
+
+    -fx-padding: 10 18 10 18;
+
+    -fx-background-radius: 12;
+
+    -fx-border-radius: 12;
+
+    -fx-cursor: hand;
+}
+
+.detail-social-button:hover {
+
+    -fx-background-color: #E2E8F0;
+}
+
+/* =========================================================
+   SCROLLPANE
+   ========================================================= */
+
+.scroll-pane {
+
+    -fx-background-color: transparent;
+
+    -fx-background: transparent;
+}
+
+.scroll-pane > .viewport {
+
+    -fx-background-color: transparent;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.scroll-bar:vertical {
+
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+
+    -fx-background-color: #CBD5E1;
+
+    -fx-background-radius: 20;
+}
+
+/* =========================================================
+   EMPTY TEXT
+   ========================================================= */
+
+.detail-empty-text {
+
+    -fx-font-size: 16px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #94A3B8;
+}
+/* =========================================================
+   WISHLIST BUTTON (di kartu dan di badge detail)
+   ========================================================= */
+
+.wishlist-button {
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 12;
+    -fx-border-color: #CBD5E1;
+    -fx-border-radius: 12;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+}
+
+.wishlist-button:hover {
+    -fx-background-color: #FEE2E2;
+    -fx-border-color: #FCA5A5;
+}
+
+/* =========================================================
+   REVIEW STAR - interaktif
+   ========================================================= */
+
+.review-star {
+    -fx-font-size: 28px;
+    -fx-cursor: hand;
+    -fx-text-fill: #CBD5E1;
+}
+
+.review-star-active {
+    -fx-font-size: 28px;
+    -fx-cursor: hand;
+    -fx-text-fill: #F59E0B;
+}
