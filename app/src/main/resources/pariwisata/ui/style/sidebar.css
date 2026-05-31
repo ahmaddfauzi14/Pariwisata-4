@@ -1,0 +1,137 @@
+/* =========================================================
+   SIDEBAR.CSS  —  User Sidebar
+   WisataRasa Makassar
+   ========================================================= */
+
+/* =========================================================
+   SIDEBAR ROOT
+   ========================================================= */
+
+.user-sidebar {
+  -fx-background-color: #0d47a1;
+  -fx-border-color: transparent #0a3d91 transparent transparent;
+  -fx-border-width: 0 1 0 0;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 14, 0, 4, 0);
+}
+
+/* =========================================================
+   LOGO SECTION
+   ========================================================= */
+
+.sidebar-logo-section {
+  -fx-background-color: #0d47a1;
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.sidebar-divider {
+  -fx-background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* =========================================================
+   SECTION LABEL  (teks kecil "MENU")
+   ========================================================= */
+
+.sidebar-section-label {
+  -fx-font-size: 10px;
+  -fx-font-weight: bold;
+  -fx-text-fill: rgba(255, 255, 255, 0.55);
+  -fx-letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   NAV ITEM — DEFAULT
+   ========================================================= */
+
+.sidebar-item {
+  -fx-background-color: transparent;
+  -fx-text-fill: #000000;
+  -fx-background-radius: 12;
+  -fx-cursor: hand;
+}
+
+/* =========================================================
+   NAV ITEM — HOVER
+   ========================================================= */
+
+.sidebar-item-hover {
+  -fx-background-color: rgba(255, 255, 255, 0.22);
+  -fx-background-radius: 12;
+}
+
+/* =========================================================
+   NAV ITEM — ACTIVE
+   ========================================================= */
+
+.sidebar-item-active {
+  -fx-background-color: rgba(255, 255, 255, 0.22);
+  -fx-background-radius: 12;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.18), 8, 0, 0, 2);
+}
+
+/* =========================================================
+   NAV ITEM — DANGER (Logout)
+   ========================================================= */
+
+.sidebar-item-danger {
+  -fx-background-color: rgba(220, 53, 69, 0.18);
+  -fx-background-radius: 12;
+}
+
+.sidebar-item-danger:hover {
+  -fx-background-color: rgba(220, 53, 69, 0.3);
+}
+
+/* =========================================================
+   NAV ITEM TEXT
+   ========================================================= */
+
+.sidebar-item-text {
+  -fx-font-size: 14px;
+  -fx-font-weight: 500;
+  -fx-text-fill: rgba(255, 255, 255, 0.85);
+}
+
+.sidebar-item-text-active {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+.sidebar-item-danger .sidebar-item-text {
+  -fx-text-fill: #ff8a8a;
+  -fx-font-weight: bold;
+}
+
+/* =========================================================
+   AVATAR CIRCLE
+   ========================================================= */
+
+.sidebar-avatar {
+  -fx-background-color: linear-gradient(to bottom right, #42a5f5, #1565c0);
+  -fx-background-radius: 999;
+  -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 6, 0, 0, 2);
+}
+
+.sidebar-avatar-label {
+  -fx-font-size: 15px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+/* =========================================================
+   USER INFO TEXT
+   ========================================================= */
+
+.sidebar-username {
+  -fx-font-size: 13px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+.sidebar-userrole {
+  -fx-font-size: 11px;
+  -fx-text-fill: rgba(255, 255, 255, 0.65);
+}

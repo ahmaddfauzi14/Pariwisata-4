@@ -14,7 +14,7 @@ public class Db {
 
     public static void connection() {
         try {
-            connection = DriverManager.getConnection(url); 
+            connection = DriverManager.getConnection(url);
             System.out.println("Koneksi berhasil!");
             DbMigration.migrate(connection);
         } catch (SQLException e) {
