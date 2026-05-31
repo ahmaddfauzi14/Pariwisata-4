@@ -1,16 +1,21 @@
 package pariwisata.database;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
-
+import pariwisata.database.migration.DestinationMigration;
+import pariwisata.database.migration.MediaSosialMigration;
+import pariwisata.database.migration.ReviewMigration;
+import pariwisata.database.migration.UserMigration;
+import pariwisata.database.migration.WishlistMigration;
 
 public class DbMigration {
-    public static void migrate(Connection conn) throws SQLException {
-        new pariwisata.database.migration.DestinationMigration().initialize();
-        new pariwisata.database.migration.UserMigration().initialize();
-        new pariwisata.database.migration.MediaSosialMigration().initialize();
-        new pariwisata.database.migration.ReviewMigration().initialize();
-        new pariwisata.database.migration.WishlistMigration().initialize();
+
+    public static void migrate(Connection connection) {
+        new UserMigration().initialize();
+        new DestinationMigration().initialize();
+        new ReviewMigration().initialize();
+        new WishlistMigration().initialize();
+        new MediaSosialMigration().initialize();
     }
+
 }
