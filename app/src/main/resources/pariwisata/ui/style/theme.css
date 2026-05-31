@@ -1,0 +1,445 @@
+/* =========================================================
+   THEME.CSS
+   Modern Tourism App - WisataRasa Makassar
+   ========================================================= */
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+.root {
+
+    -fx-font-family: "Poppins";
+
+    -primary-color: #0D6EFD;
+    -primary-dark: #003B7A;
+    -primary-light: #EAF4FF;
+
+    -background-color: #F4F8FC;
+    -card-color: #FFFFFF;
+
+    -text-primary: #1B1F3B;
+    -text-secondary: #6B7A99;
+
+    -border-color: #DCE5F2;
+}
+
+/* =========================================================
+   MAIN BACKGROUND
+   ========================================================= */
+
+.main-background {
+
+    -fx-background-color: #F4F8FC;
+}
+
+/* =========================================================
+   PAGE TITLE
+   ========================================================= */
+
+.page-title {
+
+    -fx-font-size: 28px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+
+    -fx-font-size: 22px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
+
+.subtitle {
+
+    -fx-font-size: 14px;
+
+    -fx-text-fill: #6B7A99;
+}
+
+/* =========================================================
+   MODERN CARD
+   ========================================================= */
+
+.modern-card {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 20;
+
+    -fx-border-radius: 20;
+
+    -fx-padding: 20;
+
+    -fx-spacing: 10;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0,0,0,0.08),
+        10,
+        0,
+        0,
+        4
+    );
+}
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.primary-button {
+
+    -fx-background-color: #0D6EFD;
+
+    -fx-text-fill: white;
+
+    -fx-font-size: 15px;
+
+    -fx-font-weight: bold;
+
+    -fx-background-radius: 30;
+
+    -fx-padding: 12 24 12 24;
+
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+
+    -fx-background-color: #3A8BFF;
+}
+
+/* =========================================================
+   SECONDARY BUTTON
+   ========================================================= */
+
+.secondary-button {
+
+    -fx-background-color: white;
+
+    -fx-text-fill: #0D6EFD;
+
+    -fx-border-color: #0D6EFD;
+
+    -fx-border-radius: 30;
+
+    -fx-background-radius: 30;
+
+    -fx-font-size: 14px;
+
+    -fx-font-weight: bold;
+
+    -fx-padding: 10 20 10 20;
+
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+
+    -fx-background-color: #EAF4FF;
+}
+
+/* =========================================================
+   TEXT FIELD
+   ========================================================= */
+
+.modern-textfield {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 18;
+
+    -fx-border-radius: 18;
+
+    -fx-border-color: #DCE5F2;
+
+    -fx-padding: 12;
+
+    -fx-font-size: 14px;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+.modern-textfield:focused {
+
+    -fx-border-color: #0D6EFD;
+
+    -fx-border-width: 2;
+}
+
+/* =========================================================
+   PASSWORD FIELD
+   ========================================================= */
+
+.password-field {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 18;
+
+    -fx-border-radius: 18;
+
+    -fx-border-color: #DCE5F2;
+
+    -fx-padding: 12;
+
+    -fx-font-size: 14px;
+}
+
+.password-field:focused {
+
+    -fx-border-color: #0D6EFD;
+
+    -fx-border-width: 2;
+}
+
+/* =========================================================
+   SEARCH BAR
+   ========================================================= */
+
+.search-bar {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 30;
+
+    -fx-border-radius: 30;
+
+    -fx-border-color: #DCE5F2;
+
+    -fx-padding: 10 18 10 18;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+
+    -fx-background-color: white;
+
+    -fx-padding: 20;
+
+    -fx-spacing: 10;
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0,0,0,0.05),
+        8,
+        0,
+        2,
+        0
+    );
+}
+
+/* (Sidebar item styles are in sidebar.css) */
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.hero-section {
+
+    -fx-background-radius: 30;
+
+    -fx-padding: 40;
+}
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero-title {
+
+    -fx-font-size: 34px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: white;
+}
+
+/* =========================================================
+   HERO SUBTITLE
+   ========================================================= */
+
+.hero-subtitle {
+
+    -fx-font-size: 16px;
+
+    -fx-text-fill: white;
+}
+
+/* =========================================================
+   IMAGE CONTAINER
+   ========================================================= */
+
+.image-container {
+
+    -fx-background-color: #EAF4FF;
+
+    -fx-background-radius: 20;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+
+    -fx-alignment: center;
+
+    -fx-spacing: 10;
+
+    -fx-padding: 40;
+}
+
+/* =========================================================
+   EMPTY TITLE
+   ========================================================= */
+
+.empty-title {
+
+    -fx-font-size: 20px;
+
+    -fx-font-weight: bold;
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   EMPTY SUBTITLE
+   ========================================================= */
+
+.empty-subtitle {
+
+    -fx-font-size: 14px;
+
+    -fx-text-fill: #6B7A99;
+}
+
+/* =========================================================
+   SCROLL PANE
+   ========================================================= */
+
+.scroll-pane {
+
+    -fx-background-color: transparent;
+
+    -fx-background: transparent;
+}
+
+.scroll-pane > .viewport {
+
+    -fx-background-color: transparent;
+}
+
+/* =========================================================
+   TABLE VIEW
+   ========================================================= */
+
+.table-view {
+
+    -fx-background-color: white;
+
+    -fx-background-radius: 20;
+
+    -fx-border-radius: 20;
+
+    -fx-border-color: #DCE5F2;
+}
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.table-view .column-header-background {
+
+    -fx-background-color: #F4F8FC;
+
+    -fx-background-radius: 20 20 0 0;
+}
+
+/* =========================================================
+   LABEL DEFAULT
+   ========================================================= */
+
+.label {
+
+    -fx-text-fill: #1B1F3B;
+}
+
+/* =========================================================
+   HYPERLINK
+   ========================================================= */
+
+.hyperlink {
+
+    -fx-text-fill: #0D6EFD;
+
+    -fx-border-color: transparent;
+}
+
+.hyperlink:hover {
+
+    -fx-text-fill: #3A8BFF;
+}
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.profile-image {
+
+    -fx-background-radius: 999;
+
+    -fx-border-radius: 999;
+
+    -fx-border-color: white;
+
+    -fx-border-width: 3;
+}
+
+/* =========================================================
+   SHADOW LIGHT
+   ========================================================= */
+
+.shadow-light {
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0,0,0,0.06),
+        8,
+        0,
+        0,
+        2
+    );
+}
+
+/* =========================================================
+   SHADOW MEDIUM
+   ========================================================= */
+
+.shadow-medium {
+
+    -fx-effect: dropshadow(
+        gaussian,
+        rgba(0,0,0,0.10),
+        14,
+        0,
+        0,
+        4
+    );
+}

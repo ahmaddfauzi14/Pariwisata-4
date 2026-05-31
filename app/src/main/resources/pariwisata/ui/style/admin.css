@@ -1,0 +1,119 @@
+/* =========================================================
+   ADMIN.CSS  —  Admin Panel Styling
+   WisataRasa Makassar
+   ========================================================= */
+
+/* =========================================================
+   ADMIN ROOT
+   ========================================================= */
+
+.admin-root {
+    -fx-background-color: #F4F8FC;
+}
+
+/* =========================================================
+   STAT CARD
+   ========================================================= */
+
+.stat-card {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 10, 0, 0, 4);
+}
+
+/* =========================================================
+   ADMIN TABLE
+   ========================================================= */
+
+.admin-table {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: #E8F0FA;
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 8, 0, 0, 3);
+}
+
+/* =========================================================
+   DIALOG OVERLAY
+   ========================================================= */
+
+.admin-dialog {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.22), 30, 0, 0, 8);
+    -fx-padding: 32;
+}
+
+/* =========================================================
+   ROLE BADGE
+   ========================================================= */
+
+.badge-admin {
+    -fx-background-color: #EAF4FF;
+    -fx-text-fill: #0D6EFD;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 10 3 10;
+    -fx-background-radius: 20;
+}
+
+.badge-user {
+    -fx-background-color: #F0FDF4;
+    -fx-text-fill: #16A34A;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 10 3 10;
+    -fx-background-radius: 20;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.btn-edit {
+    -fx-background-color: #EAF4FF;
+    -fx-text-fill: #0D6EFD;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 5 12 5 12;
+    -fx-cursor: hand;
+}
+
+.btn-edit:hover {
+    -fx-background-color: #BFDBFE;
+}
+
+.btn-delete {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #DC3545;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 5 12 5 12;
+    -fx-cursor: hand;
+}
+
+.btn-delete:hover {
+    -fx-background-color: #FECACA;
+}
+
+/* =========================================================
+   FORM FIELDS
+   ========================================================= */
+
+.admin-field {
+    -fx-background-color: #F8FAFF;
+    -fx-border-color: #E0E7FF;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 9 12 9 12;
+    -fx-font-size: 13px;
+}
+
+.admin-field:focused {
+    -fx-border-color: #0D6EFD;
+    -fx-border-width: 1.5;
+}
