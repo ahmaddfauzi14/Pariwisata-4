@@ -229,4 +229,14 @@ Atau **daftar akun baru** sebagai user biasa melalui halaman registrasi.
 
 ---
 
+## 👥 Tim Pengembang
+
+| Nama | NIM |
+| :--- | :--- |
+| **Ahmad Fauzi Ali** | H071251062 | Frontend - Admin |
+| **Muh Tsaqif Hafidz** | H071251030 | Backend |
+| **Siti Fatimah Hatta** | H071251013 | Frontend - User |
+
+---
+
 *WisataRasa — Jelajahi Wisata & Kuliner Makassar* 🌴
