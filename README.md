@@ -1,109 +1,251 @@
-# 🏝️ Pariwisata-4
----
+# 🧭 WisataRasa
 
-## 📋 Daftar Isi
-
-- [Panduan Kontribusi](#-panduan-kontribusi)
-- [Struktur Folder Proyek](#-struktur-folder-proyek)
+Aplikasi desktop berbasis **JavaFX** untuk menjelajahi destinasi wisata dan kuliner di kota Makassar. Dibangun dengan arsitektur berlapis (DAO – Service – UI) menggunakan database SQLite yang ringan dan tidak memerlukan instalasi server.
 
 ---
 
-## 🤝 Panduan Kontribusi
+## 📋 Deskripsi
 
-Ikuti langkah-langkah berikut untuk berkontribusi pada proyek ini:
-
-### Langkah 1: Fork Repository
-Fork repository ini ke akun GitHub kamu.
-
-### Langkah 2: Clone Repository
-Clone repository yang telah di-fork ke laptop kamu:
-```bash
-git clone https://github.com/username-kamu/Pariwisata-4.git
-```
-
-### Langkah 3: Buka di Code Editor
-Buka project di Visual Studio Code dan buka terminal.
-
-### Langkah 4: Ganti ke Branch Anda
-Pindah ke branch yang telah dibuat sebelumnya:
-```bash
-git checkout nama-branch-anda
-```
-*Contoh: `git checkout Fauzi`*
-
-### Langkah 5: Push ke Branch Personal
-- Setiap perubahan di-push ke branch personal kamu, **bukan ke branch main**
-- Setelah selesai, buat Pull Request ke branch utama (main)
-- Kode akan direview sebelum digabungkan ke main
-- Tujuannya untuk mencegah konflik dan menjaga integritas kode
-
-### Langkah 6: Sinkronisasi dengan Main
-Selalu sinkronisasi kode kamu dengan branch main secara berkala:
-```bash
-git checkout main
-git pull origin main
-git checkout nama-branch-anda
-git merge main
-```
+WisataRasa adalah aplikasi manajemen informasi pariwisata yang memudahkan pengguna menemukan tempat wisata dan kuliner lokal. Tersedia tiga peran pengguna: **Guest (Tamu)** yang dapat menjelajahi destinasi tanpa perlu login; **User** yang dapat menjelajahi, memberikan ulasan, dan menyimpan destinasi favorit; serta **Admin** yang mengelola seluruh data destinasi dan pengguna melalui dashboard khusus.
 
 ---
 
-## 📁 Struktur Folder Proyek
+## ✨ Fitur-Fitur
+
+### 👤 Fitur User
+| Fitur | Keterangan |
+|---|---|
+| Registrasi & Login | Autentikasi akun dengan enkripsi password BCrypt |
+| Homepage | Menampilkan daftar destinasi wisata & kuliner dengan Hero Section |
+| Pencarian | Mencari destinasi berdasarkan nama atau kategori |
+| Detail Destinasi | Melihat informasi lengkap: deskripsi, harga, jam operasional, lokasi maps, dan media sosial |
+| Ulasan (Review) | Memberikan ulasan dan rating pada destinasi |
+| Wishlist | Menyimpan destinasi favorit untuk dikunjungi nanti |
+| Profil | Mengelola data akun dan mengganti password |
+| Logout | Keluar dari sesi dengan konfirmasi dialog |
+
+### 🙋 Fitur Guest (Tamu)
+> Dapat diakses langsung tanpa registrasi — pilih **"Masuk sebagai Tamu"** di halaman login.
+
+| Fitur | Keterangan |
+|---|---|
+| Homepage | Menampilkan daftar destinasi wisata & kuliner dengan Hero Section |
+| Pencarian | Mencari destinasi berdasarkan nama atau kategori |
+| Detail Destinasi | Melihat informasi lengkap: deskripsi, harga, jam operasional, lokasi maps, dan media sosial |
+| ~~Ulasan (Review)~~ | ❌ Tidak tersedia — perlu login sebagai User |
+| ~~Wishlist~~ | ❌ Tidak tersedia — perlu login sebagai User |
+| ~~Profil~~ | ❌ Tidak tersedia — perlu login sebagai User |
+
+### 🛡️ Fitur Admin
+| Fitur | Keterangan |
+|---|---|
+| Dashboard | Ringkasan statistik total destinasi dan pengguna terdaftar |
+| Kelola Wisata | Tambah, edit, dan hapus data destinasi wisata |
+| Kelola Kuliner | Tambah, edit, dan hapus data destinasi kuliner |
+| Kelola Pengguna | Melihat dan mengelola daftar akun pengguna |
+
+---
+
+## 🔄 Alur Penggunaan Aplikasi
+
+```
+Jalankan Aplikasi
+       │
+       ▼
+  Halaman Login
+  ┌────┬────┴────┐
+  │    │         │
+Login  Masuk   Daftar Akun Baru
+       sebagai    │
+       Tamu       │
+  │    │          │
+  └────┴────┬─────┘
+            │
+     Cek Role Pengguna
+  ┌─────────┼──────────┐
+  │         │          │
+Guest      User      Admin
+  │         │          │
+  ▼         ▼          ▼
+Homepage  Homepage  Dashboard Admin
+  │         │          │
+  ├─ Cari Destinasi    ├─ Cari Destinasi      ├─ Kelola Destinasi Wisata
+  └─ Lihat Detail      ├─ Lihat Detail        ├─ Kelola Destinasi Kuliner
+                       ├─ Beri Ulasan         └─ Kelola Pengguna
+                       ├─ Tambah Wishlist
+                       └─ Edit Profil
+```
+
+**Alur Guest secara detail:**
+1. Buka aplikasi → masuk ke halaman **Login**
+2. Klik **"Masuk sebagai Tamu"** — tanpa perlu registrasi
+3. Masuk ke **Homepage** dan dapat menjelajahi seluruh daftar destinasi
+4. Gunakan **fitur pencarian** untuk menemukan destinasi tertentu
+5. Klik destinasi untuk melihat **halaman detail**
+6. Untuk mengakses Wishlist atau membuat Ulasan, perlu **daftar / login** terlebih dahulu
+
+**Alur User secara detail:**
+1. Buka aplikasi → otomatis masuk ke halaman **Login**
+2. Jika belum punya akun, klik **Daftar** untuk membuat akun baru
+3. Setelah login, masuk ke **Homepage** yang menampilkan daftar destinasi
+4. Gunakan **fitur pencarian** untuk menemukan destinasi tertentu
+5. Klik destinasi untuk membuka **halaman detail** (jam buka, harga tiket, lokasi, ulasan)
+6. Tambahkan ke **Wishlist** jika ingin disimpan
+7. Tulis **ulasan** untuk berbagi pengalaman
+8. Kelola akun melalui menu **Profil**
+
+**Alur Admin secara detail:**
+1. Login menggunakan akun admin
+2. Masuk ke **Dashboard** untuk melihat ringkasan statistik
+3. Navigasi ke menu **Wisata** atau **Kuliner** untuk mengelola destinasi
+4. Buka menu **Pengguna** untuk melihat daftar akun yang terdaftar
+
+---
+
+## 🔑 Akun Default
+
+Saat pertama kali dijalankan, aplikasi secara otomatis membuat akun admin berikut:
+
+| Field    | Value               |
+|----------|---------------------|
+| Email    | `admin01@gmail.com` |
+| Password | `12345678`          |
+| Role     | Admin               |
+
+> **💡 Catatan:** Akun ini langsung tersedia tanpa perlu registrasi manual. Gunakan akun ini untuk mengakses fitur admin setelah clone dan menjalankan project.
+
+---
+
+## 📁 Struktur Folder
 
 ```
 Pariwisata-4/
-├── gradle.properties          # Konfigurasi Gradle
-├── gradlew                    # Gradle Wrapper (Linux/Mac)
-├── gradlew.bat               # Gradle Wrapper (Windows)
-├── settings.gradle           # Pengaturan build Gradle
-├── README.md                 # File dokumentasi ini
-│
-├── gradle/
-│   ├── libs.versions.toml    # Versioning library dependencies
-│   └── wrapper/
-│       └── gradle-wrapper.properties
-│
-├── app/                      # Folder aplikasi utama
-│   ├── build.gradle          # Build configuration untuk app
-│   ├── build/                # Direktori build (generated)
-│   ├── db/                   # Database configuration/scripts
-│   │
-│   └── src/
-│       ├── main/
-│       │   ├── java/
-│       │   │   └── pariwisata/
-│       │   │       ├── App.java              # Main class aplikasi
-│       │   │       ├── controller/           # Controller classes
-│       │   │       ├── dao/                  # Data Access Objects
-│       │   │       ├── database/             # Database utilities
-│       │   │       ├── model/                # Model/Entity classes
-│       │   │       └── service/              # Business logic/Services
-│       │   │
-│       │   └── resources/    # Resource files (config, templates, dll)
-│       │
-│       └── test/
-│           ├── java/
-│           │   └── pariwisata/
-│           │       └── AppTest.java          # Unit tests
-│           │
-│           └── resources/    # Test resource files
-│
-└── build/                    # Root build directory (generated)
-    ├── reports/
-    └── tmp/
+└── app/
+    └── src/
+        └── main/
+            ├── java/pariwisata/
+            │   ├── App.java                         # Entry point aplikasi
+            │   ├── dao/                             # Data Access Object (query database)
+            │   │   ├── DestinationRepository.java
+            │   │   ├── MedsosRepository.java
+            │   │   ├── ReviewRepository.java
+            │   │   ├── UserRepository.java
+            │   │   └── WishlistsRepository.java
+            │   ├── database/                        # Koneksi & migrasi database
+            │   │   ├── Db.java
+            │   │   ├── DbMigration.java
+            │   │   └── migration/
+            │   │       ├── DestinationMigration.java
+            │   │       ├── MediaSosialMigration.java
+            │   │       ├── ReviewMigration.java
+            │   │       ├── UserMigration.java
+            │   │       └── WishlistMigration.java
+            │   ├── model/                           # Model / entitas data
+            │   │   ├── Destination.java
+            │   │   ├── Medsos.java
+            │   │   ├── Review.java
+            │   │   ├── User.java
+            │   │   └── Wishlist.java
+            │   ├── service/                         # Business logic
+            │   │   ├── DestinationService.java
+            │   │   ├── MedsosService.java
+            │   │   ├── ReviewService.java
+            │   │   ├── UserService.java
+            │   │   └── WishlistService.java
+            │   ├── ui/
+            │   │   ├── components/                  # Komponen UI yang dapat dipakai ulang
+            │   │   │   ├── AdminSidebar.java
+            │   │   │   ├── DestinationCard.java
+            │   │   │   ├── HeroSection.java
+            │   │   │   ├── LogoutConfirmDialog.java
+            │   │   │   ├── SearchSection.java
+            │   │   │   └── UserSidebar.java
+            │   │   └── pages/
+            │   │       ├── admin/                   # Halaman khusus admin
+            │   │       │   ├── AdminDashboardPage.java
+            │   │       │   ├── AdminKulinerPage.java
+            │   │       │   ├── AdminUserPage.java
+            │   │       │   └── AdminWisataPage.java
+            │   │       ├── auth/                    # Halaman autentikasi
+            │   │       │   ├── LoginPage.java
+            │   │       │   └── RegisterPage.java
+            │   │       └── user/                    # Halaman untuk user biasa
+            │   │           ├── DetailDestinationPage.java
+            │   │           ├── HomepagePage.java
+            │   │           ├── ProfilePage.java
+            │   │           └── WishlistPage.java
+            │   └── util/                            # Utilitas pendukung
+            │       ├── ImageHelper.java
+            │       ├── Navigator.java
+            │       └── Session.java
+            └── resources/pariwisata/
+                ├── assets/
+                │   ├── fonts/                       # Font Poppins
+                │   ├── icons/                       # Ikon aplikasi
+                │   ├── images/                      # Gambar hero & auth
+                │   └── logo/                        # Logo WisataRasa
+                └── ui/style/
+                    └── theme.css                    # Stylesheet global
 ```
-
-### Penjelasan Struktur:
-
-| Folder | Deskripsi |
-|--------|-----------|
-| `gradle/` | Konfigurasi dan wrapper untuk Gradle build system |
-| `app/` | Folder aplikasi utama berisi kode sumber |
-| `app/src/main/` | Kode sumber aplikasi (production code) |
-| `app/src/test/` | Kode test dan testing resources |
-| `app/db/` | Script dan konfigurasi database |
-| `app/build/` | Direktori build hasil kompilasi (auto-generated) |
 
 ---
 
-**Happy Coding! 🚀**
+## 🚀 Cara Menjalankan Project
+
+### Prasyarat
+
+Pastikan perangkat kamu sudah terinstal:
+- **Java Development Kit (JDK) 21** atau lebih baru → [Download JDK](https://adoptium.net/)
+- **Gradle** (sudah disertakan via Gradle Wrapper, tidak perlu install manual)
+
+### Langkah-langkah
+
+**1. Clone repository**
+```bash
+git clone <url-repository>
+cd Pariwisata-4
+```
+
+**2. Jalankan aplikasi**
+```bash
+# Windows
+gradlew.bat run
+
+# Linux / macOS
+./gradlew run
+```
+
+> Gradle akan otomatis mengunduh semua dependensi yang dibutuhkan pada saat pertama kali dijalankan. Pastikan koneksi internet tersedia.
+
+**3. Login sebagai Admin**
+
+Setelah aplikasi terbuka, langsung gunakan akun default berikut:
+```
+Email    : admin01@gmail.com
+Password : 12345678
+```
+
+Atau **daftar akun baru** sebagai user biasa melalui halaman registrasi.
+
+### Dependensi Utama
+
+| Library | Versi | Fungsi |
+|---|---|---|
+| JavaFX | 21 | Framework UI |
+| SQLite JDBC | 3.42.0.0 | Database lokal |
+| jBCrypt | 0.4 | Enkripsi password |
+| JUnit Jupiter | — | Unit testing |
+
+---
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Java 21** — Bahasa pemrograman utama
+- **JavaFX 21** — Framework antarmuka grafis (GUI)
+- **SQLite** — Database lokal berbasis file (`db/pariwisata.db`)
+- **Gradle** — Build tool & dependency manager
+- **BCrypt** — Enkripsi password pengguna
+
+---
+
+*WisataRasa — Jelajahi Wisata & Kuliner Makassar* 🌴
