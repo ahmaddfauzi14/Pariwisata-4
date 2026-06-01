@@ -146,4 +146,24 @@ public class SearchSection extends VBox {
     public Button getKulinerButton() {
         return kulinerButton;
     }
+
+    public void setActiveFilter(String filter) {
+        allButton.getStyleClass().removeAll("filter-button", "filter-button-active");
+        wisataButton.getStyleClass().removeAll("filter-button", "filter-button-active");
+        kulinerButton.getStyleClass().removeAll("filter-button", "filter-button-active");
+
+        if (filter.equalsIgnoreCase("semua")) {
+            allButton.getStyleClass().add("filter-button-active");
+            wisataButton.getStyleClass().add("filter-button");
+            kulinerButton.getStyleClass().add("filter-button");
+        } else if (filter.equalsIgnoreCase("wisata")) {
+            allButton.getStyleClass().add("filter-button");
+            wisataButton.getStyleClass().add("filter-button-active");
+            kulinerButton.getStyleClass().add("filter-button");
+        } else if (filter.equalsIgnoreCase("kuliner")) {
+            allButton.getStyleClass().add("filter-button");
+            wisataButton.getStyleClass().add("filter-button");
+            kulinerButton.getStyleClass().add("filter-button-active");
+        }
+    }
 }

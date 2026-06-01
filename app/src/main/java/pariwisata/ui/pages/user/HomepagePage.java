@@ -160,20 +160,26 @@ public class HomepagePage {
          * =====================================================
          */
 
-        searchSection.getAllButton().setOnAction(e ->
-                loadDestinations(stage, destinationList,
-                        wisataContainer, kulinerContainer,
-                        wisataSection, kulinerSection, "semua"));
+        searchSection.getAllButton().setOnAction(e -> {
+            searchSection.setActiveFilter("semua");
+            loadDestinations(stage, destinationList,
+                    wisataContainer, kulinerContainer,
+                    wisataSection, kulinerSection, "semua");
+        });
 
-        searchSection.getWisataButton().setOnAction(e ->
-                loadDestinations(stage, destinationList,
-                        wisataContainer, kulinerContainer,
-                        wisataSection, kulinerSection, "wisata"));
+        searchSection.getWisataButton().setOnAction(e -> {
+            searchSection.setActiveFilter("wisata");
+            loadDestinations(stage, destinationList,
+                    wisataContainer, kulinerContainer,
+                    wisataSection, kulinerSection, "wisata");
+        });
 
-        searchSection.getKulinerButton().setOnAction(e ->
-                loadDestinations(stage, destinationList,
-                        wisataContainer, kulinerContainer,
-                        wisataSection, kulinerSection, "kuliner"));
+        searchSection.getKulinerButton().setOnAction(e -> {
+            searchSection.setActiveFilter("kuliner");
+            loadDestinations(stage, destinationList,
+                    wisataContainer, kulinerContainer,
+                    wisataSection, kulinerSection, "kuliner");
+        });
 
         /*
          * =====================================================
