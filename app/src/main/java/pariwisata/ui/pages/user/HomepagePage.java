@@ -114,7 +114,8 @@ public class HomepagePage {
          */
 
         loadDestinations(stage, destinationList,
-                wisataContainer, kulinerContainer, "semua");
+                wisataContainer, kulinerContainer,
+                wisataSection, kulinerSection, "semua");
 
         /*
          * =====================================================
@@ -161,15 +162,18 @@ public class HomepagePage {
 
         searchSection.getAllButton().setOnAction(e ->
                 loadDestinations(stage, destinationList,
-                        wisataContainer, kulinerContainer, "semua"));
+                        wisataContainer, kulinerContainer,
+                        wisataSection, kulinerSection, "semua"));
 
         searchSection.getWisataButton().setOnAction(e ->
                 loadDestinations(stage, destinationList,
-                        wisataContainer, kulinerContainer, "wisata"));
+                        wisataContainer, kulinerContainer,
+                        wisataSection, kulinerSection, "wisata"));
 
         searchSection.getKulinerButton().setOnAction(e ->
                 loadDestinations(stage, destinationList,
-                        wisataContainer, kulinerContainer, "kuliner"));
+                        wisataContainer, kulinerContainer,
+                        wisataSection, kulinerSection, "kuliner"));
 
         /*
          * =====================================================
@@ -250,7 +254,18 @@ public class HomepagePage {
                                    List<Destination> destinationList,
                                    FlowPane wisataContainer,
                                    FlowPane kulinerContainer,
+                                   VBox wisataSection,
+                                   VBox kulinerSection,
                                    String filter) {
+
+        // Tampilkan / sembunyikan section sesuai filter
+        boolean showWisata  = filter.equals("semua") || filter.equals("wisata");
+        boolean showKuliner = filter.equals("semua") || filter.equals("kuliner");
+
+        wisataSection.setVisible(showWisata);
+        wisataSection.setManaged(showWisata);
+        kulinerSection.setVisible(showKuliner);
+        kulinerSection.setManaged(showKuliner);
 
         wisataContainer.getChildren().clear();
         kulinerContainer.getChildren().clear();
@@ -262,30 +277,26 @@ public class HomepagePage {
 
             if (destination.getCategory() == null) continue;
 
-            if (destination.getCategory().equalsIgnoreCase("wisata")) {
-                if (filter.equals("semua") || filter.equals("wisata")) {
-                    wisataFound = true;
-                    wisataContainer.getChildren().add(
-                            new DestinationCard(stage, destination));
-                }
+            if (destination.getCategory().equalsIgnoreCase("wisata") && showWisata) {
+                wisataFound = true;
+                wisataContainer.getChildren().add(
+                        new DestinationCard(stage, destination));
             }
 
-            if (destination.getCategory().equalsIgnoreCase("kuliner")) {
-                if (filter.equals("semua") || filter.equals("kuliner")) {
-                    kulinerFound = true;
-                    kulinerContainer.getChildren().add(
-                            new DestinationCard(stage, destination));
-                }
+            if (destination.getCategory().equalsIgnoreCase("kuliner") && showKuliner) {
+                kulinerFound = true;
+                kulinerContainer.getChildren().add(
+                        new DestinationCard(stage, destination));
             }
         }
 
-        if (!wisataFound && (filter.equals("semua") || filter.equals("wisata"))) {
+        if (!wisataFound && showWisata) {
             Label e = new Label("Belum ada data wisata");
             e.getStyleClass().add("empty-title");
             wisataContainer.getChildren().add(e);
         }
 
-        if (!kulinerFound && (filter.equals("semua") || filter.equals("kuliner"))) {
+        if (!kulinerFound && showKuliner) {
             Label e = new Label("Belum ada data kuliner");
             e.getStyleClass().add("empty-title");
             kulinerContainer.getChildren().add(e);
