@@ -17,6 +17,7 @@ import pariwisata.ui.pages.user.ProfilePage;
 import pariwisata.ui.pages.user.WishlistPage;
 import pariwisata.ui.pages.auth.LoginPage;
 import pariwisata.util.Navigator;
+import pariwisata.ui.components.LogoutConfirmDialog;
 
 public class UserSidebar extends VBox {
 
@@ -254,8 +255,12 @@ public class UserSidebar extends VBox {
                 );
             }
             case "logout"   -> {
-                Session.logout();
-                new LoginPage().show(stage);
+                String currentUser = Session.getDisplayName();
+                LogoutConfirmDialog dialog = new LogoutConfirmDialog(stage, currentUser);
+                if (dialog.showAndWait()) {
+                    Session.logout();
+                    new LoginPage().show(stage);
+                }
             }
         }
     }
