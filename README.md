@@ -1,3 +1,6 @@
+<p align="center">
+  <img width="648" height="242" alt="Frame 2" src="https://github.com/user-attachments/assets/236ad162-de8d-428a-a3c5-008ee04c64c3" />
+</p>
 # 🧭 WisataRasa
 
 Aplikasi desktop berbasis **JavaFX** untuk menjelajahi destinasi wisata dan kuliner di kota Makassar. Dibangun dengan arsitektur berlapis (DAO – Service – UI) menggunakan database SQLite yang ringan dan tidak memerlukan instalasi server.
@@ -22,7 +25,7 @@ WisataRasa adalah aplikasi manajemen informasi pariwisata yang memudahkan penggu
 | Ulasan (Review) | Memberikan ulasan dan rating pada destinasi |
 | Wishlist | Menyimpan destinasi favorit untuk dikunjungi nanti |
 | Profil | Mengelola data akun dan mengganti password |
-| Logout | Keluar dari sesi dengan konfirmasi dialog |
+| Logout | Keluar dari sesi pengguna dengan konfirmasi dialog |
 
 ### 🙋 Fitur Guest (Tamu)
 > Dapat diakses langsung tanpa registrasi — pilih **"Masuk sebagai Tamu"** di halaman login.
@@ -35,6 +38,7 @@ WisataRasa adalah aplikasi manajemen informasi pariwisata yang memudahkan penggu
 | ~~Ulasan (Review)~~ | ❌ Tidak tersedia — perlu login sebagai User |
 | ~~Wishlist~~ | ❌ Tidak tersedia — perlu login sebagai User |
 | ~~Profil~~ | ❌ Tidak tersedia — perlu login sebagai User |
+| Logout | Keluar dari sesi tamu dengan konfirmasi dialog |
 
 ### 🛡️ Fitur Admin
 | Fitur | Keterangan |
@@ -43,38 +47,14 @@ WisataRasa adalah aplikasi manajemen informasi pariwisata yang memudahkan penggu
 | Kelola Wisata | Tambah, edit, dan hapus data destinasi wisata |
 | Kelola Kuliner | Tambah, edit, dan hapus data destinasi kuliner |
 | Kelola Pengguna | Melihat dan mengelola daftar akun pengguna |
+| Logout | Keluar dari sesi admin dengan konfirmasi dialog |
 
 ---
 
 ## 🔄 Alur Penggunaan Aplikasi
 
-```
-Jalankan Aplikasi
-       │
-       ▼
-  Halaman Login
-  ┌────┬────┴────┐
-  │    │         │
-Login  Masuk   Daftar Akun Baru
-       sebagai    │
-       Tamu       │
-  │    │          │
-  └────┴────┬─────┘
-            │
-     Cek Role Pengguna
-  ┌─────────┼──────────┐
-  │         │          │
-Guest      User      Admin
-  │         │          │
-  ▼         ▼          ▼
-Homepage  Homepage  Dashboard Admin
-  │         │          │
-  ├─ Cari Destinasi    ├─ Cari Destinasi      ├─ Kelola Destinasi Wisata
-  └─ Lihat Detail      ├─ Lihat Detail        ├─ Kelola Destinasi Kuliner
-                       ├─ Beri Ulasan         └─ Kelola Pengguna
-                       ├─ Tambah Wishlist
-                       └─ Edit Profil
-```
+<img width="1149" height="1369" alt="c242438b-eb07-4963-ad35-1686e818fb3d" src="https://github.com/user-attachments/assets/3c20b1e1-ab0c-4c40-a8ad-fa8e8ff9f71a" />
+
 
 **Alur Guest secara detail:**
 1. Buka aplikasi → masuk ke halaman **Login**
