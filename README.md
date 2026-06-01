@@ -1,6 +1,7 @@
 <p align="center">
   <img width="648" height="242" alt="Frame 2" src="https://github.com/user-attachments/assets/236ad162-de8d-428a-a3c5-008ee04c64c3" />
 </p>
+
 # 🧭 WisataRasa
 
 Aplikasi desktop berbasis **JavaFX** untuk menjelajahi destinasi wisata dan kuliner di kota Makassar. Dibangun dengan arsitektur berlapis (DAO – Service – UI) menggunakan database SQLite yang ringan dan tidak memerlukan instalasi server.
